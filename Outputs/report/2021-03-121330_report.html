@@ -1,0 +1,845 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>1219单元测试报告</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    
+<style type="text/css" media="screen">
+body        { font-family: Microsoft YaHei,Tahoma,arial,helvetica,sans-serif;padding: 20px; font-size: 120%; }
+table       { font-size: 100%; }
+/* -- heading ---------------------------------------------------------------------- */
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+/* -- report ------------------------------------------------------------------------ */
+#total_row  { font-weight: bold; }
+.passCase   { color: #5cb85c; }
+.failCase   { color: #d9534f; font-weight: bold; }
+.errorCase  { color: #f0ad4e; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+</style>
+
+</head>
+<body >
+<script language="javascript" type="text/javascript">
+output_list = Array();
+/*level 调整增加只显示通过用例的分类 --Findyou
+0:Summary //all hiddenRow
+1:Failed  //pt hiddenRow, ft none
+2:Pass    //pt none, ft hiddenRow
+3:All     //pt none, ft none
+*/
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level == 2 || level == 0 ) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level < 2) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+    }
+    //加入【详细】切换文字变化 --Findyou
+    detail_class=document.getElementsByClassName('detail');
+	//console.log(detail_class.length)
+	if (level == 3) {
+		for (var i = 0; i < detail_class.length; i++){
+			detail_class[i].innerHTML="收起"
+		}
+	}
+	else{
+			for (var i = 0; i < detail_class.length; i++){
+			detail_class[i].innerHTML="详细"
+		}
+	}
+}
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        //ID修改 点 为 下划线 -Findyou
+        tid0 = 't' + cid.substr(1) + '_' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        //修改点击无法收起的BUG，加入【详细】切换文字变化 --Findyou
+        if (toHide) {
+            document.getElementById(tid).className = 'hiddenRow';
+            document.getElementById(cid).innerText = "详细"
+        }
+        else {
+            document.getElementById(tid).className = '';
+            document.getElementById(cid).innerText = "收起"
+        }
+    }
+}
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+</script>
+<div class='heading'>
+<h1 style="font-family: Microsoft YaHei">1219单元测试报告</h1>
+<p class='attribute'><strong>测试人员 : </strong> 最菜同学</p>
+<p class='attribute'><strong>开始时间 : </strong> 2021-03-12 13:30:03</p>
+<p class='attribute'><strong>合计耗时 : </strong> 0:00:13.429486</p>
+<p class='attribute'><strong>测试结果 : </strong> 共 44，通过 40，失败 2，错误 2，通过率= 90.91%</p>
+
+<p class='description'>这个是单元测试报告</p>
+</div>
+
+
+<p id='show_detail_line'>
+<a class="btn btn-primary" href='javascript:showCase(0)'>概要{ 90.91% }</a>
+<a class="btn btn-danger" href='javascript:showCase(1)'>失败{ 2 }</a>
+<a class="btn btn-success" href='javascript:showCase(2)'>通过{ 40 }</a>
+<a class="btn btn-info" href='javascript:showCase(3)'>所有{ 44 }</a>
+</p>
+<table id='result_table' class="table table-condensed table-bordered table-hover">
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row' class="text-center success" style="font-weight: bold;font-size: 16px;">
+    <td>用例集/测试用例</td>
+    <td>总计</td>
+    <td>通过</td>
+    <td>失败</td>
+    <td>错误</td>
+    <td>详细</td>
+</tr>
+
+<tr class='errorClass warning'>
+    <td>test_add.TestAdd</td>
+    <td class="text-center">12</td>
+    <td class="text-center">10</td>
+    <td class="text-center">1</td>
+    <td class="text-center">1</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c1',12)" class="detail" id='c1'>详细</a></td>
+</tr>
+
+<tr id='pt1_1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_add_01_加标_管理员登陆</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt1_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt1_1'>通过</button>
+    <div id='div_pt1_1' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt1_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt1_1'>通过</button>
+    <div id='div_pt1_1' class="collapse in" align="left">
+    <pre>
+    
+pt1_1: 1000171712
+eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjEwMDAxNzE3MTIsImV4cCI6MTYxNTUyNzMwM30.PoZSLuFw3wgn9wGjDLPNAdY12jXxzyAEi1bEP56KXdR6W78QY0_Hq7IqLgNBbuKq35JF2_w53HNRI-yXzsQK1w
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_2' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_add_02_加标成功</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
+</tr>
+
+<tr id='pt1_3' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_add_03_加标失败__借款人id为空</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
+</tr>
+
+<tr id='pt1_4' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_add_04_加标失败__标题为空</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
+</tr>
+
+<tr id='pt1_5' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_add_05_加标失败__借款金额为空</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
+</tr>
+
+<tr id='pt1_6' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_add_06_加标失败__借款年利率为空</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
+</tr>
+
+<tr id='pt1_7' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_add_07_加标失败__借款期限为空</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
+</tr>
+
+<tr id='pt1_8' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_add_08_加标失败__竞标天数为空</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
+</tr>
+
+<tr id='ft1_9' class='none'>
+    <td class='failCase'><div class='testcase'>test_add_09_加标失败__借款id不是当前用户</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_9' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_9'>失败</button>
+    <div id='div_ft1_9' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_9' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_9'>失败</button>
+    <div id='div_ft1_9' class="collapse in" align="left">
+    <pre>
+    
+ft1_9: Traceback (most recent call last):
+  File "/Users/nncz/Library/Python/3.8/lib/python/site-packages/ddt.py", line 192, in wrapper
+    return func(self, *args, **kwargs)
+  File "/Users/nncz/PycharmProjects/pythonProject/API_ningmeng_dome/test_case/test_add.py", line 75, in test_add
+    raise e
+  File "/Users/nncz/PycharmProjects/pythonProject/API_ningmeng_dome/test_case/test_add.py", line 61, in test_add
+    self.assertEqual(expected_data["msg"], res["msg"])
+AssertionError: '余额必须大于0并且小于或者等于500007' != 'JSON parse error: Cannot deserialize valu[372 chars]d"])'
+- 余额必须大于0并且小于或者等于500007
++ JSON parse error: Cannot deserialize value of type `java.lang.Long` from String "1000171712+1": not a valid Long value; nested exception is com.fasterxml.jackson.databind.exc.InvalidFormatException: Cannot deserialize value of type `java.lang.Long` from String "1000171712+1": not a valid Long value
+ at [Source: (PushbackInputStream); line: 1, column: 15] (through reference chain: com.lemon.pojo.Loan["member_id"])
+
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt1_10' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_add_10_加标失败__借款金额为负数</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
+</tr>
+
+<tr id='pt1_11' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_add_11_加标失败__借款金额为小数</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
+</tr>
+
+<tr id='ft1_12' class='none'>
+    <td class='errorCase'><div class='testcase'>test_add_12_None</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft1_12' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft1_12'>错误</button>
+    <div id='div_ft1_12' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft1_12' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft1_12'>错误</button>
+    <div id='div_ft1_12' class="collapse in" align="left">
+    <pre>
+    
+ft1_12: Traceback (most recent call last):
+  File "/Users/nncz/Library/Python/3.8/lib/python/site-packages/ddt.py", line 192, in wrapper
+    return func(self, *args, **kwargs)
+  File "/Users/nncz/PycharmProjects/pythonProject/API_ningmeng_dome/test_case/test_add.py", line 48, in test_add
+    res = send_request(case["method"], case["url"], case["data"], token=EnvData.admin_token).json()
+  File "/Users/nncz/PycharmProjects/pythonProject/API_ningmeng_dome/requestHttp/Request_Package.py", line 27, in send_request
+    url=__pre_url(url)
+  File "/Users/nncz/PycharmProjects/pythonProject/API_ningmeng_dome/requestHttp/Request_Package.py", line 47, in __pre_url
+    if url.startswith("/"):
+AttributeError: 'NoneType' object has no attribute 'startswith'
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr class='passClass warning'>
+    <td>test_invest.InvestTest</td>
+    <td class="text-center">10</td>
+    <td class="text-center">10</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c2',10)" class="detail" id='c2'>详细</a></td>
+</tr>
+
+<tr id='pt2_1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_invest_01_管理员登陆</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt2_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_1'>通过</button>
+    <div id='div_pt2_1' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt2_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt2_1'>通过</button>
+    <div id='div_pt2_1' class="collapse in" align="left">
+    <pre>
+    
+pt2_1: 1000171712
+eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjEwMDAxNzE3MTIsImV4cCI6MTYxNTUyNzMwN30.37jhlt7BSDoML_aaC-yhHAGncU7yRkz6_V43KUIy2oAY0S6vyKi84jbXmC4205ylBRqFvoee5r7xU5TZGI4GuA
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_2' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_invest_02_管理员加标成功</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt2_2' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_2'>通过</button>
+    <div id='div_pt2_2' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt2_2' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt2_2'>通过</button>
+    <div id='div_pt2_2' class="collapse in" align="left">
+    <pre>
+    
+pt2_2: 2017642
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_3' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_invest_03_管理员审核</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
+</tr>
+
+<tr id='pt2_4' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_invest_04_普通用户登陆</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt2_4' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt2_4'>通过</button>
+    <div id='div_pt2_4' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt2_4' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt2_4'>通过</button>
+    <div id='div_pt2_4' class="collapse in" align="left">
+    <pre>
+    
+pt2_4: 1000171713
+eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjEwMDAxNzE3MTMsImV4cCI6MTYxNTUyNzMwOH0.xEPKgIKsaWLblOHJyAk6nqbPRwXy3nnEQsMxLEUmluaVjfDapthB4g0ShHfbEQ7J25ofAOiipVCiPwmIEt5FCA
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt2_5' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_invest_05_充值成功___2位数</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
+</tr>
+
+<tr id='pt2_6' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_invest_06_投资</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
+</tr>
+
+<tr id='pt2_7' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_invest_07_正常投资</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
+</tr>
+
+<tr id='pt2_8' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_invest_08_投资人id为空</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
+</tr>
+
+<tr id='pt2_9' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_invest_09_标id为空</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
+</tr>
+
+<tr id='pt2_10' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_invest_10_投资金额为空</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
+</tr>
+
+<tr class='failClass warning'>
+    <td>test_recharge.TestRecharge</td>
+    <td class="text-center">11</td>
+    <td class="text-center">10</td>
+    <td class="text-center">1</td>
+    <td class="text-center">0</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c3',11)" class="detail" id='c3'>详细</a></td>
+</tr>
+
+<tr id='pt3_1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_recharge_01_负数</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt3_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt3_1'>通过</button>
+    <div id='div_pt3_1' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt3_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt3_1'>通过</button>
+    <div id='div_pt3_1' class="collapse in" align="left">
+    <pre>
+    
+pt3_1: &lt;class 'dict'&gt;
+None
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt3_2' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_recharge_02_字母</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt3_2' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt3_2'>通过</button>
+    <div id='div_pt3_2' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt3_2' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt3_2'>通过</button>
+    <div id='div_pt3_2' class="collapse in" align="left">
+    <pre>
+    
+pt3_2: &lt;class 'dict'&gt;
+None
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt3_3' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_recharge_03_三位小数</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt3_3' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt3_3'>通过</button>
+    <div id='div_pt3_3' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt3_3' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt3_3'>通过</button>
+    <div id='div_pt3_3' class="collapse in" align="left">
+    <pre>
+    
+pt3_3: &lt;class 'dict'&gt;
+None
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt3_4' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_recharge_04_充值超过50万</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt3_4' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt3_4'>通过</button>
+    <div id='div_pt3_4' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt3_4' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt3_4'>通过</button>
+    <div id='div_pt3_4' class="collapse in" align="left">
+    <pre>
+    
+pt3_4: &lt;class 'dict'&gt;
+None
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt3_5' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_recharge_05_用户不正确</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt3_5' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt3_5'>通过</button>
+    <div id='div_pt3_5' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt3_5' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt3_5'>通过</button>
+    <div id='div_pt3_5' class="collapse in" align="left">
+    <pre>
+    
+pt3_5: &lt;class 'dict'&gt;
+None
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt3_6' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_recharge_06_成功</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt3_6' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt3_6'>通过</button>
+    <div id='div_pt3_6' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt3_6' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt3_6'>通过</button>
+    <div id='div_pt3_6' class="collapse in" align="left">
+    <pre>
+    
+pt3_6: &lt;class 'dict'&gt;
+SELECT CAST(leave_amount AS CHAR)as amount FROM member WHERE id=1000171713
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt3_7' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_recharge_07_充值成功__一位数</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt3_7' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt3_7'>通过</button>
+    <div id='div_pt3_7' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt3_7' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt3_7'>通过</button>
+    <div id='div_pt3_7' class="collapse in" align="left">
+    <pre>
+    
+pt3_7: &lt;class 'dict'&gt;
+SELECT CAST(leave_amount AS CHAR)as amount FROM member WHERE id=1000171713
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt3_8' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_recharge_08_充值成功___2位数</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt3_8' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt3_8'>通过</button>
+    <div id='div_pt3_8' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt3_8' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt3_8'>通过</button>
+    <div id='div_pt3_8' class="collapse in" align="left">
+    <pre>
+    
+pt3_8: &lt;class 'dict'&gt;
+SELECT CAST(leave_amount AS CHAR)as amount FROM member WHERE id=1000171713
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt3_9' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_recharge_09_充值成功__50万</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt3_9' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt3_9'>通过</button>
+    <div id='div_pt3_9' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt3_9' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt3_9'>通过</button>
+    <div id='div_pt3_9' class="collapse in" align="left">
+    <pre>
+    
+pt3_9: &lt;class 'dict'&gt;
+SELECT CAST(leave_amount AS CHAR)as amount FROM member WHERE id=1000171713
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='ft3_10' class='none'>
+    <td class='failCase'><div class='testcase'>test_recharge_10_id不是当前用户</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft3_10' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft3_10'>失败</button>
+    <div id='div_ft3_10' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft3_10' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft3_10'>失败</button>
+    <div id='div_ft3_10' class="collapse in" align="left">
+    <pre>
+    
+ft3_10: &lt;class 'dict'&gt;
+None
+Traceback (most recent call last):
+  File "/Users/nncz/Library/Python/3.8/lib/python/site-packages/ddt.py", line 192, in wrapper
+    return func(self, *args, **kwargs)
+  File "/Users/nncz/PycharmProjects/pythonProject/API_ningmeng_dome/test_case/test_recharge.py", line 118, in test_recharge
+    raise e
+  File "/Users/nncz/PycharmProjects/pythonProject/API_ningmeng_dome/test_case/test_recharge.py", line 104, in test_recharge
+    self.assertEqual(expected_data["code"], res["code"])
+AssertionError: 2 != 1007
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt3_11' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_recharge_11_会员id为空</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt3_11' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt3_11'>通过</button>
+    <div id='div_pt3_11' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt3_11' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt3_11'>通过</button>
+    <div id='div_pt3_11' class="collapse in" align="left">
+    <pre>
+    
+pt3_11: &lt;class 'dict'&gt;
+None
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr class='passClass warning'>
+    <td>test_register.TestRegister</td>
+    <td class="text-center">8</td>
+    <td class="text-center">8</td>
+    <td class="text-center">0</td>
+    <td class="text-center">0</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c4',8)" class="detail" id='c4'>详细</a></td>
+</tr>
+
+<tr id='pt4_1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_register_ok_1_正常注册: #步骤：测试数据 - 发起请求</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt4_1' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt4_1'>通过</button>
+    <div id='div_pt4_1' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt4_1' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt4_1'>通过</button>
+    <div id='div_pt4_1' class="collapse in" align="left">
+    <pre>
+    
+pt4_1: {'code': 0, 'msg': 'OK', 'data': {'id': 1000171802, 'reg_name': '小柠檬', 'mobile_phone': '15840672565'}, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt4_2' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_register_ok_2_账号已存在: #步骤：测试数据 - 发起请求</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt4_2' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt4_2'>通过</button>
+    <div id='div_pt4_2' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt4_2' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt4_2'>通过</button>
+    <div id='div_pt4_2' class="collapse in" align="left">
+    <pre>
+    
+pt4_2: {'code': 2, 'msg': '密码格式为8到16位', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt4_3' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_register_ok_3_密码为空: #步骤：测试数据 - 发起请求</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt4_3' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt4_3'>通过</button>
+    <div id='div_pt4_3' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt4_3' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt4_3'>通过</button>
+    <div id='div_pt4_3' class="collapse in" align="left">
+    <pre>
+    
+pt4_3: {'code': 1, 'msg': '密码为空', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt4_4' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_register_ok_4_手机号为空: #步骤：测试数据 - 发起请求</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt4_4' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt4_4'>通过</button>
+    <div id='div_pt4_4' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt4_4' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt4_4'>通过</button>
+    <div id='div_pt4_4' class="collapse in" align="left">
+    <pre>
+    
+pt4_4: {'code': 1, 'msg': '手机号为空', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt4_5' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_register_ok_5_密码格式为8到16位: #步骤：测试数据 - 发起请求</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt4_5' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt4_5'>通过</button>
+    <div id='div_pt4_5' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt4_5' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt4_5'>通过</button>
+    <div id='div_pt4_5' class="collapse in" align="left">
+    <pre>
+    
+pt4_5: {'code': 2, 'msg': '无效的手机格式', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt4_6' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_register_ok_6_密码格式为8到16位: #步骤：测试数据 - 发起请求</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt4_6' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt4_6'>通过</button>
+    <div id='div_pt4_6' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt4_6' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt4_6'>通过</button>
+    <div id='div_pt4_6' class="collapse in" align="left">
+    <pre>
+    
+pt4_6: {'code': 2, 'msg': '密码格式为8到16位', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt4_7' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_register_ok_7_手机号为空: #步骤：测试数据 - 发起请求</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt4_7' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt4_7'>通过</button>
+    <div id='div_pt4_7' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt4_7' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt4_7'>通过</button>
+    <div id='div_pt4_7' class="collapse in" align="left">
+    <pre>
+    
+pt4_7: {'code': 1, 'msg': '手机号为空', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt4_8' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_register_ok_8_密码格式为8到16位: #步骤：测试数据 - 发起请求</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_pt4_8' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_pt4_8'>通过</button>
+    <div id='div_pt4_8' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_pt4_8' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_pt4_8'>通过</button>
+    <div id='div_pt4_8' class="collapse in" align="left">
+    <pre>
+    
+pt4_8: {'code': 2, 'msg': '密码格式为8到16位', 'data': None, 'copyright': 'Copyright 柠檬班 © 2017-2020 湖南省零檬信息技术有限公司 All Rights Reserved'}
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr class='errorClass warning'>
+    <td>test_user_business.TestUserBusiness</td>
+    <td class="text-center">3</td>
+    <td class="text-center">2</td>
+    <td class="text-center">0</td>
+    <td class="text-center">1</td>
+    <td class="text-center"><a href="javascript:showClassDetail('c5',3)" class="detail" id='c5'>详细</a></td>
+</tr>
+
+<tr id='pt5_1' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_user_business_1_正常注册: 1。替换数据</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
+</tr>
+
+<tr id='ft5_2' class='none'>
+    <td class='errorCase'><div class='testcase'>test_user_business_2_正常登陆: 1。替换数据</div></td>
+    <td colspan='5' align='center'>
+    <!--默认收起错误信息 -Findyou
+    <button id='btn_ft5_2' type="button"  class="btn btn-danger btn-xs collapsed" data-toggle="collapse" data-target='#div_ft5_2'>错误</button>
+    <div id='div_ft5_2' class="collapse">  -->
+    <!-- 默认展开错误信息 -Findyou -->
+    <button id='btn_ft5_2' type="button"  class="btn btn-danger btn-xs" data-toggle="collapse" data-target='#div_ft5_2'>错误</button>
+    <div id='div_ft5_2' class="collapse in" align="left">
+    <pre>
+    
+ft5_2: Traceback (most recent call last):
+  File "/Users/nncz/Library/Python/3.8/lib/python/site-packages/ddt.py", line 192, in wrapper
+    return func(self, *args, **kwargs)
+  File "/Users/nncz/PycharmProjects/pythonProject/API_ningmeng_dome/test_case/test_user_business.py", line 57, in test_user_business
+    extract_data_from_response(case["extract_data"],res)
+  File "/Users/nncz/PycharmProjects/pythonProject/API_ningmeng_dome/common/handler_extract_data_from_response.py", line 30, in extract_data_from_response
+    res = str(jsonpath(response_dict,value)[0])
+TypeError: 'bool' object is not subscriptable
+
+
+    </pre>
+    </div>
+    </td>
+</tr>
+
+<tr id='pt5_3' class='hiddenRow'>
+    <td class='passCase'><div class='testcase'>test_user_business_3_充值成功__一位数: 1。替换数据</div></td>
+    <td colspan='5' align='center'><span class="label label-success success">通过</span></td>
+</tr>
+
+<tr id='total_row' class="text-center active">
+    <td>总计</td>
+    <td>44</td>
+    <td>40</td>
+    <td>2</td>
+    <td>2</td>
+    <td>通过率：90.91%</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+    <div style=" position:fixed;right:50px; bottom:30px; width:20px; height:20px;cursor:pointer">
+    <a href="#"><span class="glyphicon glyphicon-eject" style = "font-size:30px;" aria-hidden="true">
+    </span></a></div>
+    
+</body>
+</html>

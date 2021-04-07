@@ -1,0 +1,122 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/html" xmlns:vertical-align="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+	body{background:#CCC;}
+	div{background:#FFF;
+	color:#09F;
+
+	padding:15px;
+	margin:60px auto 0px;
+	width:600px;
+	font-family:"微软雅黑";
+	box-shadow:10px 10px 15px black  ;}
+	h2{text-align:center;}
+	hr{width:80%;
+	border:1px solid  #09F ;
+	margin-top:-5px;
+	}
+	input{margin:10px}
+	li{margin:10px;}
+	input[type="text"] ,input[type="tel"]
+    { width:100px;
+	border:0px;
+	border-bottom:1px solid;	}
+
+	button{background:#09F;
+	color:white;
+	width:100px;
+	height:40px;
+	font-size:16px;
+	font-weight:bold;
+	font-family:"微软雅黑";
+	margin:5% 39%;}
+	button:hover{background:#0CF;}
+
+
+
+</style>
+</head>
+
+
+<body>
+	<div>
+    	<h2>牛牛成长内测问卷调查</h2><br/>
+        <hr/><br/>
+        <form method="post" action="URL" onSubmit="return check()">
+        <!--input[type="text"] ,input[type="tel"]
+    { width:100px;
+	border:0px;
+	border-bottom:1px solid;	}-->
+        	<ol>
+            	<li>使用过程中，APP是否符合您的使用体验，各项数据是否正常</li>
+                	<label> <input type="radio" name="1"  required>是的，很完美 </label>
+                   <label> <input type="radio" name="1"  required>还行 </label>
+                   <label> <input type="radio" name="1"  required>勉强 </label>
+                   <label> <input type="radio" name="1"  required>不符合 </label>
+
+                <li>您的年龄段是？</li>
+                	<label> <input type="radio" name="2"  required>18岁以下 </label>
+                   <label> <input type="radio" name="2"  required>18-25岁 </label>
+                   <label> <input type="radio" name="2"  required>26-30岁 </label>
+                   <label> <input type="radio" name="2"  required>31-35岁 </label>
+                   <label> <input type="radio" name="2"  required>35岁以上 </label>
+                <li>出现了如下Bug(可多选）</li>
+                	<label> <input type="checkbox"  name="q3">无 </label></br>
+                   <label> <input type="checkbox"  name="q3">app闪退 </label></br>
+                   <label> <input type="checkbox"  name="q3">蓝牙连接不上 </label></br>
+                   <label> <input type="checkbox"  name="q3">没有数据 </label></br>
+                   <label> <input type="checkbox"  name="q3">数据加载数据长 </label></br>
+                   <label> <input type="checkbox"  name="q3">数据没有同步 </label></br>
+                   <label> <input type="checkbox"  name="q3">严重卡顿 </label></br>
+<!--                   <label> <input type="checkbox"  name="q3">其他Bug，请详细描述出现的其他Bug </label>-->
+
+
+                <li>您看重以下哪些支付功能？（可多选）</li>
+                	<label> <input type="checkbox"  name="q4">话费充值 </label><br/>
+                   <label> <input type="checkbox"  name="q4">刷手机加油 </label><br/>
+                   <label> <input type="checkbox"  name="q4">刷手机购物 </label><br/>
+                   <label> <input type="checkbox"  name="q4">乘坐公交/地铁 </label><br/>
+                   <label> <input type="checkbox"  name="q4">以上均不感兴趣 </label><br/>
+            </ol>
+            <label >回答题：请问您觉得我国现有企业手机APP营销推广中有何不足，有何改善建议？
+                <textarea name="textfield3" cols="50" rows="3" ></textarea> </label></br>
+            <label>您的职业<input type="text" name="position"  required></label>
+            <label>联系电话<input type="tel" name="tel"  required></label>
+            <button type="submit">提交问卷</button>
+
+        </form>
+        <script>
+		 	function checkBox(name){
+				var j=0;
+				var checkbox=document.getElementsByName(name);
+				for(var i=0; i<checkbox.length;i++){
+					if(checkbox[i].checked){
+						j++;
+						break;
+					}
+				}
+				if(j==0)return false;
+				return true;
+			}
+
+
+			function check(){
+				var q3=checkBox("q3");
+				if(q3==false){
+					alert("第3题起码要选择一个选项");
+					return false;
+				}
+				var q4=checkBox("q4");
+				if(q4==false){
+					alert("第4题起码要选择一个选项");
+					return false;
+				}
+			}
+
+		</script>
+    </div>
+</body>
+</html>

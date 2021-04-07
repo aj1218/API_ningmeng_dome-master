@@ -1,0 +1,147 @@
+2021-02-19 15:12:01,147 - [logs.py-->line:42] - INFO: qwert234567890-j
+2021-02-19 15:12:01,148 - [logs.py-->line:43] - INFO: qwertj
+2021-02-19 16:03:33,163 - [logs.py-->line:68] - INFO: qwerghjkasdfgjgfdsa12345678iop
+2021-02-19 16:36:52,393 - [HttptestCase.py-->line:32] - INFO: ***********开始测试啦******************
+2021-02-19 16:36:52,393 - [HttptestCase.py-->line:33] - INFO: 测试数据为：python30
+2021-02-19 16:36:52,393 - [HttptestCase.py-->line:35] - INFO: 测试结果为：{'msg': '登陆成功', 'code': 0}
+2021-02-19 16:36:52,393 - [HttptestCase.py-->line:41] - ERROR: 断言通过，用例不通过
+NoneType: None
+2021-02-19 16:36:52,393 - [HttptestCase.py-->line:42] - ERROR: **********用例执行结束****************
+NoneType: None
+2021-02-19 16:36:52,394 - [HttptestCase.py-->line:32] - INFO: ***********开始测试啦******************
+2021-02-19 16:36:52,394 - [HttptestCase.py-->line:33] - INFO: 测试数据为：python30
+2021-02-19 16:36:52,394 - [HttptestCase.py-->line:35] - INFO: 测试结果为：{'msg': '登陆失败', 'code': 1}
+2021-02-19 16:36:52,394 - [HttptestCase.py-->line:41] - ERROR: 断言通过，用例不通过
+NoneType: None
+2021-02-19 16:36:52,394 - [HttptestCase.py-->line:42] - ERROR: **********用例执行结束****************
+NoneType: None
+2021-02-19 16:36:52,394 - [HttptestCase.py-->line:32] - INFO: ***********开始测试啦******************
+2021-02-19 16:36:52,394 - [HttptestCase.py-->line:33] - INFO: 测试数据为：python31
+2021-02-19 16:36:52,394 - [HttptestCase.py-->line:35] - INFO: 测试结果为：{'msg': '登陆失败', 'code': 1}
+2021-02-19 16:36:52,394 - [HttptestCase.py-->line:41] - ERROR: 断言通过，用例不通过
+NoneType: None
+2021-02-19 16:36:52,394 - [HttptestCase.py-->line:42] - ERROR: **********用例执行结束****************
+NoneType: None
+2021-02-19 16:36:52,394 - [HttptestCase.py-->line:32] - INFO: ***********开始测试啦******************
+2021-02-19 16:36:52,394 - [HttptestCase.py-->line:33] - INFO: 测试数据为：None
+2021-02-19 16:36:52,394 - [HttptestCase.py-->line:35] - INFO: 测试结果为：{'msg': '所有参数不能为空'}
+2021-02-19 16:36:52,394 - [HttptestCase.py-->line:41] - ERROR: 断言通过，用例不通过
+NoneType: None
+2021-02-19 16:36:52,395 - [HttptestCase.py-->line:42] - ERROR: **********用例执行结束****************
+NoneType: None
+2021-02-19 16:37:38,429 - [HttptestCase.py-->line:32] - INFO: ***********开始测试啦******************
+2021-02-19 16:37:38,429 - [HttptestCase.py-->line:33] - INFO: 测试数据为：python30
+2021-02-19 16:37:38,429 - [HttptestCase.py-->line:35] - INFO: 测试结果为：{'msg': '登陆成功', 'code': 0}
+2021-02-19 16:37:38,429 - [HttptestCase.py-->line:41] - ERROR: 断言通过，用例不通过
+NoneType: None
+2021-02-19 16:37:38,429 - [HttptestCase.py-->line:42] - ERROR: **********用例执行结束****************
+NoneType: None
+2021-02-19 16:37:38,429 - [HttptestCase.py-->line:32] - INFO: ***********开始测试啦******************
+2021-02-19 16:37:38,429 - [HttptestCase.py-->line:33] - INFO: 测试数据为：python30
+2021-02-19 16:37:38,429 - [HttptestCase.py-->line:35] - INFO: 测试结果为：{'msg': '登陆失败', 'code': 1}
+2021-02-19 16:37:38,429 - [HttptestCase.py-->line:41] - ERROR: 断言通过，用例不通过
+NoneType: None
+2021-02-19 16:37:38,429 - [HttptestCase.py-->line:42] - ERROR: **********用例执行结束****************
+NoneType: None
+2021-02-19 16:37:38,429 - [HttptestCase.py-->line:32] - INFO: ***********开始测试啦******************
+2021-02-19 16:37:38,429 - [HttptestCase.py-->line:33] - INFO: 测试数据为：python31
+2021-02-19 16:37:38,430 - [HttptestCase.py-->line:35] - INFO: 测试结果为：{'msg': '登陆失败', 'code': 1}
+2021-02-19 16:37:38,430 - [HttptestCase.py-->line:41] - ERROR: 断言通过，用例不通过
+NoneType: None
+2021-02-19 16:37:38,430 - [HttptestCase.py-->line:42] - ERROR: **********用例执行结束****************
+NoneType: None
+2021-02-19 16:37:38,430 - [HttptestCase.py-->line:32] - INFO: ***********开始测试啦******************
+2021-02-19 16:37:38,430 - [HttptestCase.py-->line:33] - INFO: 测试数据为：None
+2021-02-19 16:37:38,430 - [HttptestCase.py-->line:35] - INFO: 测试结果为：{'msg': '所有参数不能为空'}
+2021-02-19 16:37:38,430 - [HttptestCase.py-->line:41] - ERROR: 断言通过，用例不通过
+NoneType: None
+2021-02-19 16:37:38,430 - [HttptestCase.py-->line:42] - ERROR: **********用例执行结束****************
+NoneType: None
+2021-02-19 16:44:46,900 - [HttptestCase.py-->line:32] - INFO: ***********开始测试啦******************
+2021-02-19 16:44:46,900 - [HttptestCase.py-->line:33] - INFO: 测试数据为：python30
+2021-02-19 16:46:16,058 - [HttptestCase.py-->line:32] - INFO: ***********开始测试啦******************
+2021-02-19 16:46:16,058 - [HttptestCase.py-->line:33] - INFO: 测试数据为：python30
+2021-02-19 16:46:16,058 - [HttptestCase.py-->line:35] - INFO: 测试结果为：0
+2021-02-19 16:46:16,058 - [HttptestCase.py-->line:41] - ERROR: 断言通过，用例通过
+NoneType: None
+2021-02-19 16:46:16,059 - [HttptestCase.py-->line:42] - ERROR: **********用例执行结束****************
+NoneType: None
+2021-02-19 16:46:16,059 - [HttptestCase.py-->line:32] - INFO: ***********开始测试啦******************
+2021-02-19 16:46:16,059 - [HttptestCase.py-->line:33] - INFO: 测试数据为：python30
+2021-02-19 16:46:16,059 - [HttptestCase.py-->line:35] - INFO: 测试结果为：1
+2021-02-19 16:46:16,059 - [HttptestCase.py-->line:41] - ERROR: 断言通过，用例通过
+NoneType: None
+2021-02-19 16:46:16,059 - [HttptestCase.py-->line:42] - ERROR: **********用例执行结束****************
+NoneType: None
+2021-02-19 16:46:16,059 - [HttptestCase.py-->line:32] - INFO: ***********开始测试啦******************
+2021-02-19 16:46:16,059 - [HttptestCase.py-->line:33] - INFO: 测试数据为：python31
+2021-02-19 16:46:16,059 - [HttptestCase.py-->line:35] - INFO: 测试结果为：1
+2021-02-19 16:46:16,059 - [HttptestCase.py-->line:41] - ERROR: 断言通过，用例通过
+NoneType: None
+2021-02-19 16:46:16,059 - [HttptestCase.py-->line:42] - ERROR: **********用例执行结束****************
+NoneType: None
+2021-02-19 16:46:16,059 - [HttptestCase.py-->line:32] - INFO: ***********开始测试啦******************
+2021-02-19 16:46:16,059 - [HttptestCase.py-->line:33] - INFO: 测试数据为：None
+2021-02-19 16:46:56,155 - [HttptestCase.py-->line:32] - INFO: ***********开始测试啦******************
+2021-02-19 16:46:56,155 - [HttptestCase.py-->line:33] - INFO: 测试数据为：{'username': 'python30', 'pwd': 11111, 'check': {'msg': '登陆成功', 'code': 0}}
+2021-02-19 16:46:56,155 - [HttptestCase.py-->line:35] - INFO: 测试结果为：{'msg': '登陆成功', 'code': 0}
+2021-02-19 16:46:56,155 - [HttptestCase.py-->line:41] - ERROR: 断言通过，用例通过
+NoneType: None
+2021-02-19 16:46:56,155 - [HttptestCase.py-->line:42] - ERROR: **********用例执行结束****************
+NoneType: None
+2021-02-19 16:46:56,156 - [HttptestCase.py-->line:32] - INFO: ***********开始测试啦******************
+2021-02-19 16:46:56,156 - [HttptestCase.py-->line:33] - INFO: 测试数据为：{'username': 'python30', 'pwd': 11112, 'check': {'msg': '登陆失败', 'code': 1}}
+2021-02-19 16:46:56,156 - [HttptestCase.py-->line:35] - INFO: 测试结果为：{'msg': '登陆失败', 'code': 1}
+2021-02-19 16:46:56,156 - [HttptestCase.py-->line:41] - ERROR: 断言通过，用例通过
+NoneType: None
+2021-02-19 16:46:56,156 - [HttptestCase.py-->line:42] - ERROR: **********用例执行结束****************
+NoneType: None
+2021-02-19 16:46:56,156 - [HttptestCase.py-->line:32] - INFO: ***********开始测试啦******************
+2021-02-19 16:46:56,156 - [HttptestCase.py-->line:33] - INFO: 测试数据为：{'username': 'python31', 'pwd': 11113, 'check': {'msg': '登陆失败', 'code': 1}}
+2021-02-19 16:46:56,156 - [HttptestCase.py-->line:35] - INFO: 测试结果为：{'msg': '登陆失败', 'code': 1}
+2021-02-19 16:46:56,156 - [HttptestCase.py-->line:41] - ERROR: 断言通过，用例通过
+NoneType: None
+2021-02-19 16:46:56,156 - [HttptestCase.py-->line:42] - ERROR: **********用例执行结束****************
+NoneType: None
+2021-02-19 16:46:56,156 - [HttptestCase.py-->line:32] - INFO: ***********开始测试啦******************
+2021-02-19 16:46:56,156 - [HttptestCase.py-->line:33] - INFO: 测试数据为：{'username': None, 'pwd': None, 'check': {'msg': '所有参数不能为空'}}
+2021-02-19 16:46:56,156 - [HttptestCase.py-->line:35] - INFO: 测试结果为：{'msg': '所有参数不能为空'}
+2021-02-19 16:46:56,156 - [HttptestCase.py-->line:41] - ERROR: 断言通过，用例通过
+NoneType: None
+2021-02-19 16:46:56,156 - [HttptestCase.py-->line:42] - ERROR: **********用例执行结束****************
+NoneType: None
+2021-02-19 16:48:40,540 - [HttptestCase.py-->line:32] - INFO: ***********开始测试啦******************
+2021-02-19 16:48:40,540 - [HttptestCase.py-->line:33] - INFO: 测试数据为：{'username': 'python30', 'pwd': 11111, 'check': {'msg': '登陆成功', 'code': 0}}
+2021-02-19 16:48:40,540 - [HttptestCase.py-->line:35] - INFO: 测试结果为：{'msg': '登陆成功', 'code': 0}
+2021-02-19 16:48:40,540 - [HttptestCase.py-->line:41] - ERROR: 断言通过，用例通过
+NoneType: None
+2021-02-19 16:48:40,541 - [HttptestCase.py-->line:42] - ERROR: **********用例执行结束****************
+NoneType: None
+2021-02-19 16:48:40,541 - [HttptestCase.py-->line:32] - INFO: ***********开始测试啦******************
+2021-02-19 16:48:40,541 - [HttptestCase.py-->line:33] - INFO: 测试数据为：{'username': 'python30', 'pwd': 11112, 'check': {'msg': '登陆失败', 'code': 1}}
+2021-02-19 16:48:40,541 - [HttptestCase.py-->line:35] - INFO: 测试结果为：{'msg': '登陆失败', 'code': 1}
+2021-02-19 16:48:40,541 - [HttptestCase.py-->line:41] - ERROR: 断言通过，用例通过
+NoneType: None
+2021-02-19 16:48:40,541 - [HttptestCase.py-->line:42] - ERROR: **********用例执行结束****************
+NoneType: None
+2021-02-19 16:48:40,541 - [HttptestCase.py-->line:32] - INFO: ***********开始测试啦******************
+2021-02-19 16:48:40,541 - [HttptestCase.py-->line:33] - INFO: 测试数据为：{'username': 'python31', 'pwd': 11113, 'check': {'msg': '登陆失败', 'code': 1}}
+2021-02-19 16:48:40,541 - [HttptestCase.py-->line:35] - INFO: 测试结果为：{'msg': '登陆失败', 'code': 1}
+2021-02-19 16:48:40,541 - [HttptestCase.py-->line:41] - ERROR: 断言通过，用例通过
+NoneType: None
+2021-02-19 16:48:40,541 - [HttptestCase.py-->line:42] - ERROR: **********用例执行结束****************
+NoneType: None
+2021-02-19 16:48:40,541 - [HttptestCase.py-->line:32] - INFO: ***********开始测试啦******************
+2021-02-19 16:48:40,541 - [HttptestCase.py-->line:33] - INFO: 测试数据为：{'username': None, 'pwd': None, 'check': {'msg': '所有参数不能为空'}}
+2021-02-19 16:48:40,541 - [HttptestCase.py-->line:35] - INFO: 测试结果为：{'msg': '所有参数不能为空'}
+2021-02-19 16:48:40,541 - [HttptestCase.py-->line:41] - ERROR: 断言通过，用例通过
+NoneType: None
+2021-02-19 16:48:40,542 - [HttptestCase.py-->line:42] - ERROR: **********用例执行结束****************
+NoneType: None
+2021-02-20 10:47:51,320 - [logs.py-->line:68] - INFO: qwerghjkasdfgjgfdsa12345678iop
+2021-02-20 15:53:22,793 - [logs.py-->line:69] - INFO: qwerghjkasdfgjgfdsa12345678iop
+2021-02-20 15:58:31,585 - [logs.py-->line:74] - INFO: qwerghjkasdfgjgfdsa12345678iop
+2021-02-20 16:23:09,768 - [logs.py-->line:75] - INFO: qwerghjkasdfgjgfdsa12345678iop
+2021-02-20 16:23:22,805 - [logs.py-->line:75] - INFO: qwerghjkasdfgjgfdsa12345678iop
+2021-02-20 16:23:24,072 - [logs.py-->line:75] - INFO: qwerghjkasdfgjgfdsa12345678iop
+2021-02-20 16:23:25,068 - [logs.py-->line:75] - INFO: qwerghjkasdfgjgfdsa12345678iop
